@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Test Check</title>
+<?php
+header("Access-Control-Allow-Origin: *");
+	$con = mysqli_connect('localhost', 'id15284944_ffet_joe', 'nex58HPa&123', 'id15284944_ffet_db');
+	
+	if(mysqli_connect_error()){
+		echo " 1: Connection failed";
+		exit;
+	}
+
+	$userEmail = $_POST["userEmail"];
+	
+	$sql = "SELECT testLevel FROM users WHERE email = '".$userEmail."';";
+	$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo $row["testLevel"]."|";
+  }
+} else {
+  echo "0 results";
+}
+$con->close();
+?>
+  </head>
+  <body>
+
+  </body>
+</html>
