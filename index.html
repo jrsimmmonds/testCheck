@@ -3,6 +3,19 @@
 <head>
 <title>Page Title</title>
 </head>
+  
+  	<script type="text/javascript">
+      var userEmail;
+      window.onmessage = (event) => {
+        if (event.data) {
+          //document.getElementById("theLabel").innerHTML = event.data;
+          userEmail = event.data;
+		console.log(userEmail);
+		//SetEmail();
+        }
+      };
+    </script>
+  
 <body>
 
 <h1>This is a Heading</h1>
