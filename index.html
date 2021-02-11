@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>1</title>
-</head>
-  
-  	<script type="text/javascript">
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TestLevelCheck</title>
+	<script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+	  var unityInstance = UnityLoader.instantiate("unityContainer", "Build/TestLevelCheck.json");
+    </script>
+    </script>
+	
+	    <script type="text/javascript">
       var userEmail;
+	  var userClass;
+	  var testLevel;
+	  
       window.onmessage = (event) => {
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
@@ -14,9 +24,25 @@
 		//SetEmail();
         }
       };
-    </script>
-  
-<body>
+	    
+	    function IsUnityReady() {
+		    console.log("IsUnityReady fucntion has run");
+	    	SetEmail();
+	    }
+		
+		function SendInfoToWix() {
+		    console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
 
-</body>
-</html>
+	    }
+	    
+	 function SetEmail() {
+		console.log("setEmail fucntion has run");
+	 	//document.getElementById("email").innerHTML = userEmail;
+		 unityInstance.SendMessage('Bridge', 'SendToUnity', userEmail);
+	 }
+    </script>
+	
+  </head>
+  <body>
+    <div id="unityContainer" style="width: 100px; height: 100px; margin: auto"></div>
+  </body>
