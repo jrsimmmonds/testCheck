@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>GetTestStats</title>
+	
+	<script type="text/javascript">
+      var userEmail;
+      window.onmessage = (event) => {
+        if (event.data) {
+          //document.getElementById("theLabel").innerHTML = event.data;
+          userEmail = event.data;
+		console.log(userEmail);
+		//SetEmail();
+        }
+      };
+    </script>
+	
+  </head>
+  <body>
+  </body>
+</html>
