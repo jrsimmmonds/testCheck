@@ -11,43 +11,41 @@
     </script>
     </script>
 	
-    <script type="text/javascript">
-        var userEmail;
-	var userClass;
-	var testLevel;
+	    <script type="text/javascript">
+      var userEmail;
+	  var userClass;
+	  var testLevel;
 	  
-        window.onmessage = (event) => {
+      window.onmessage = (event) => {
         if (event.data) {
-          	//document.getElementById("theLabel").innerHTML = event.data;
-          	userEmail = event.data;
+          //document.getElementById("theLabel").innerHTML = event.data;
+          userEmail = event.data;
 		console.log(userEmail);
 		//SetEmail();
-        	}
-        };
+        }
+      };
 	    
-	function IsUnityReady() {
-		console.log("IsUnityReady fucntion has run");
+	    function IsUnityReady() {
+		    console.log("IsUnityReady fucntion has run");
 	    	SetEmail();
 	    }
 		
-	function SendInfoToWix(MessageToSend2, MessageToSend3) {
-		console.log("SendInfoToWin has ran");
-		//userClass = MessageToSend2;
-		testLevel = MessageToSend3;
-		//console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
-		RespondTestLevel();
-	}
+		function SendInfoToWix(MessageToSend2, MessageToSend3) {
+			userClass = MessageToSend2;
+			testLevel = MessageToSend3;
+		    console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
+			respond();
+	    }
 		
-	function RespondTestLevel() {
-		console.log("Respond has ran");
-		//window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
-		window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
-	}
+			function respond() {
+			window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			}
 	    
 	 function SetEmail() {
 		console.log("setEmail fucntion has run");
 	 	//document.getElementById("email").innerHTML = userEmail;
-		unityInstance.SendMessage('Bridge', 'SendToUnity', userEmail);
+		 unityInstance.SendMessage('Bridge', 'SendToUnity', userEmail);
 	 }
     </script>
 	
