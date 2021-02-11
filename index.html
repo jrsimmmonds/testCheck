@@ -31,14 +31,14 @@
 	    }
 		
 		function SendInfoToWix(MessageToSend2, MessageToSend3) {
-			userClass = MessageToSend2;
+			//userClass = MessageToSend2;
 			testLevel = MessageToSend3;
 		    console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
 			respond();
 	    }
 		
 			function respond() {
-			window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			//window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			}
 	    
