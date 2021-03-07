@@ -26,23 +26,32 @@
       };
 	    
 	    function IsUnityReady() {
+		//Checks if Unity has loaded is a stage where it can recieve an email address.
 		    console.log("IsUnityReady fucntion has run");
 	    	SetEmail();
 	    }
 		
 		function SendInfoToWix(MessageToSend2, MessageToSend3) {
-			//userClass = MessageToSend2;
+		//This sends some variables to wix. 
+			userClass = MessageToSend2;
 			testLevel = MessageToSend3;
 		    console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
 			respond();
+			respond2();
 	    }
 		
 			function respond() {
 			//window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			}
+			
+			function respond2() {
+			//window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			}
 	    
 	 function SetEmail() {
+	 //Sends the wix login email address to Unity.
 		console.log("setEmail fucntion has run");
 	 	//document.getElementById("email").innerHTML = userEmail;
 		 unityInstance.SendMessage('Bridge', 'SendToUnity', userEmail);
