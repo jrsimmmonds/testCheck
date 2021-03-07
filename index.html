@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>TestLevelCheck1</title>
+    <title>TestLevelCheck2</title>
 	
     <script src="Build/UnityLoader.js"></script>
     <script>
@@ -37,17 +37,12 @@
 			testLevel = MessageToSend3;
 		    console.log("SendInfoToWix has ran" + userClass + " " + testLevel);
 			respond();
-			respond2();
 	    }
 		
 			function respond() {
 			//window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
-			window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
-			}
-			
-			function respond2() {
-			window.parent.postMessage(userClass, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			//window.parent.postMessage(testLevel, "https://www.fourfoxaudiotraining.com/eartraininghome");
+			window.parent.postMessage({v1: testLevel, v2: userClass}, "https://www.fourfoxaudiotraining.com/eartraininghome");
 			}
 	    
 	 function SetEmail() {
